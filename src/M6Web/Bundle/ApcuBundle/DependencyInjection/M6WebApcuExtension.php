@@ -18,7 +18,7 @@ class M6WebApcuExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        foreach($config as $serviceId => $parameters) {
+        foreach ($config as $serviceId => $parameters) {
             $container
                 ->register(
                     sprintf('m6web_apcu.%s', $serviceId),
