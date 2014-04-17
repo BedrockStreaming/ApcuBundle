@@ -22,13 +22,20 @@ Don't forget to enable the extension in your _php.ini_.
 
 ## Configuration
 
+The main configuration key is `m6web_apcu`. Each subkey defines a new Apcu cache service. These services are named `m6web_apcu + subkey`. For each service, several parameters can be set :
+
+- `namespace` (string, optional) : Empty by default. Namespace for all keys stored in APCu cache via this instance.
+- `ttl` (integer, optionnal) : 3600 (seconds) by default. Define the default TTL used when no TTL is given to store data.
+- `class` (string, optionnal) : You can override the default cache class. It should extends `M6Web\Bundle\ApcuBundle\Apcu\Apcu`.
+
 ### Example
 
 ```yml
 m6web_apcu:
-    applaunch:
+    myCache:
         namespace: 6play-api-applaunch
         ttl: 3600
+    otherCache: ~
 ```
 
 ## Tests
