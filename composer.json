@@ -1,0 +1,16 @@
+{
+    "name": "m6web/apcu-bundle",
+    "type": "symfony-bundle",
+    "description" : "Provide APCu support",
+    "require": {
+        "php": ">=5.4",
+        "ext-apcu": "~4.0"
+    },
+    "require-dev": {
+        "atoum/atoum":      "master-dev"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "minimum-stability" : "dev"
+}
