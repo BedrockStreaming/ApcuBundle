@@ -5,6 +5,11 @@ namespace M6Web\Bundle\ApcuBundle\M6WebWSClient;
 use M6Web\Bundle\WSClientBundle\Cache\CacheInterface;
 use M6Web\Bundle\ApcuBundle\Apcu\Apcu as BaseApcu;
 
+/**
+ * Class Apcu adapted to an usage throught the WsClient
+ *
+ * @package M6Web\Bundle\ApcuBundle\M6WebWSClient
+ */
 class Apcu extends BaseApcu implements CacheInterface
 {
     /**
