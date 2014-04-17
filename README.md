@@ -20,6 +20,17 @@ Also require the PECL extension APCu :
 
 Don't forget to enable the extension in your _php.ini_.
 
+## Configuration
+
+### Example
+
+```yml
+m6web_apcu:
+    applaunch:
+        namespace: 6play-api-applaunch
+        ttl: 3600
+```
+
 ## Tests
 
 If you wish to run Bundle tests, you must enable APCu in CLI environment by defining `apc.enable_cli` option to `1`.
