@@ -38,6 +38,25 @@ m6web_apcu:
     otherCache: ~
 ```
 
+## Usage
+
+```php
+$cache = $container->get('m6web_apcu.myCache');
+$key   = 'myCacheKey';
+
+var_dump($cache->exists($key)); // boolean, false
+
+$cache->store($key, 'Hello', 3600)
+
+var_dump($cache->exists($key)); // boolean, true
+var_dump($cache->fetch($key)); // string, Hello
+
+$cache->delete($key);
+
+var_dump($cache->exists($key)); // boolean, false
+var_dump($cache->fetch($key)); // bolean, false
+```
+
 ## Tests
 
 If you wish to run Bundle tests, you must enable APCu in CLI environment by defining `apc.enable_cli` option to `1`.
