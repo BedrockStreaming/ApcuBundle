@@ -1,4 +1,4 @@
-# Bundle APCu
+# Bundle APCu [![Build Status](https://travis-ci.org/M6Web/ApcuBundle.svg?branch=master)](https://travis-ci.org/M6Web/ApcuBundle)
 
 Provide APCu support, see [PECL/APCu](http://pecl.php.net/package/APCu).
 
