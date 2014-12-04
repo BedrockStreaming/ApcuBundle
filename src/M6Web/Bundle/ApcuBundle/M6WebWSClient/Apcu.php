@@ -53,7 +53,7 @@ class Apcu extends BaseApcu implements CacheInterface
         $infos = apcu_cache_info();
 
         foreach ($infos['cache_list'] as $entry) {
-            if ($entry['key'] == $key) {
+            if ($entry['info'] == $key) {
                 return $entry['ttl'];
             }
         }
