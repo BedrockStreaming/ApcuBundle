@@ -7,8 +7,10 @@
         "ext-apcu": "~4.0"
     },
     "require-dev": {
-        "atoum/atoum"           : "master-dev",
-        "m6web/wsclient-bundle" : "~2.0"
+        "atoum/atoum"           : "~1.0",
+        "m6web/wsclient-bundle" : "~2.0",
+        "m6web/coke" : "~1.2",
+        "m6web/symfony2-coding-standard" : "~1.1"
     },
     "autoload": {
         "psr-0": { "": "src/" }
