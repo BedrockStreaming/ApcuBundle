@@ -1,8 +1,6 @@
 <?php
 namespace M6Web\Bundle\ApcuBundle\Tests\Units\Apcu;
 
-require __DIR__.'/../../../../../../../vendor/autoload.php';
-
 use mageekguy\atoum;
 use M6Web\Bundle\ApcuBundle\Apcu\Apcu as Base;
 
