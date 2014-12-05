@@ -21,6 +21,8 @@ And you can launch coke
 ./vendor/bin/coke
 ```
 
+*NB: due to an update in APCu API, ApcuBundle 1.1.0 is the last version who work with APCu < 4.0.7*
+
 ## Testing
 
 This bundle is tested with [atoum](https://github.com/atoum/atoum).
