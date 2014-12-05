@@ -20,6 +20,8 @@ Also require the PECL extension APCu :
 
 Don't forget to enable the extension in your _php.ini_.
 
+*NB: due to an update in APCu API, from ApcuBundle v1.1.1, you must install APCu v4.0.7 or higher*
+
 ## Configuration
 
 The main configuration key is `m6web_apcu`. Each subkey defines a new Apcu cache service. These services are named `m6web_apcu + subkey`. For each service, several parameters can be set :
