@@ -22,7 +22,11 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
      */
     public function get($key)
     {
-        return $this->fetch($key);
+        if (($value = $this->fetch($key)) === false) {
+            return null;
+        }
+
+        return $value;
     }
 
     /**
