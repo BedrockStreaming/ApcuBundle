@@ -3,13 +3,15 @@ language: php
 php:
   - 5.5
   - 5.6
+  - 7.0
 
 before_script:
-  - yes | pecl install -f apcu
+  - phpenv config-rm xdebug.ini
+  - bash travis/$TRAVIS_PHP_VERSION.sh
   - echo "apc.enabled=1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - echo "apc.enable_cli=1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - wget http://getcomposer.org/composer.phar
-  - php composer.phar install --dev
+  - php composer.phar install
 
 script:
   - vendor/bin/atoum
