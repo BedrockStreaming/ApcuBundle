@@ -4,7 +4,7 @@
     "description" : "Provide APCu support",
     "require": {
         "php": ">=5.5",
-        "ext-apcu": ">=4.0.7, <5.2"
+        "ext-apcu": ">=4.0.7, <5.3"
     },
     "require-dev": {
         "atoum/atoum"           : "~2.4",
