@@ -8,7 +8,7 @@ Via [Composer](https://getcomposer.org/) :
 
 ```json
 "require": {
-    "m6web/apcu-bundle" : "1.0.0"
+    "m6web/apcu-bundle" : "^1.4"
 }
 ```
 
