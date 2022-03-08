@@ -1,13 +1,13 @@
 <?php
 namespace M6Web\Bundle\ApcuBundle\Tests\Units\Apcu;
 
-use mageekguy\atoum;
+use atoum;
 use M6Web\Bundle\ApcuBundle\Apcu\Apcu as Base;
 
 /**
  * Apcu class test
  */
-class Apcu extends atoum\test
+class Apcu extends atoum
 {
     /**
      * Create cace instance
