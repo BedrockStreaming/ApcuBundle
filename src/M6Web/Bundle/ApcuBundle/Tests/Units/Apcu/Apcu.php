@@ -1,13 +1,13 @@
 <?php
+
 namespace M6Web\Bundle\ApcuBundle\Tests\Units\Apcu;
 
-use atoum;
 use M6Web\Bundle\ApcuBundle\Apcu\Apcu as Base;
 
 /**
  * Apcu class test
  */
-class Apcu extends atoum
+class Apcu extends \atoum
 {
     /**
      * Create cace instance
@@ -25,7 +25,7 @@ class Apcu extends atoum
     public function testStandardChacheProcess()
     {
         $cache = $this->getCacheInstance();
-        $key   = 'foo-bar';
+        $key = 'foo-bar';
 
         $this
             ->boolean($cache->exists($key))
@@ -53,7 +53,7 @@ class Apcu extends atoum
         $cache = $this->getCacheInstance();
 
         $namespace = uniqid();
-        $ttl       = rand(1000, 10000);
+        $ttl = rand(1000, 10000);
 
         $cache
             ->setNamespace($namespace)

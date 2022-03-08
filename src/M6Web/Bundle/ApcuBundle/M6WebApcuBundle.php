@@ -10,9 +10,9 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class M6WebApcuBundle extends Bundle
 {
     /**
-    * Allow bypassing the Bundle::getContainerExtension check on getAlias
-    *
-    * @return Object DependencyInjection\M6WebApcuExtension
+     * Allow bypassing the Bundle::getContainerExtension check on getAlias
+     *
+     * @return object DependencyInjection\M6WebApcuExtension
      */
     public function getContainerExtension()
     {

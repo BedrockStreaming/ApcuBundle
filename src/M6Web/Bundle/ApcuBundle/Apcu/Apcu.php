@@ -8,21 +8,17 @@ namespace M6Web\Bundle\ApcuBundle\Apcu;
  */
 class Apcu
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $namespace;
 
-    /**
-     * @var ttl
-     */
+    /** @var ttl */
     protected $ttl;
 
     /**
      * Construct
      *
-     * @param string  $namespace Namespace
-     * @param integer $ttl       Default TTL
+     * @param string $namespace Namespace
+     * @param int    $ttl       Default TTL
      */
     public function __construct($namespace = '', $ttl = 3600)
     {
@@ -56,7 +52,7 @@ class Apcu
     /**
      * Define default TTL
      *
-     * @param integer $ttl
+     * @param int $ttl
      *
      * @return $this [description]
      */
@@ -70,7 +66,7 @@ class Apcu
     /**
      * Get default TTL
      *
-     * @return integer
+     * @return int
      */
     public function getTtl()
     {
@@ -80,11 +76,11 @@ class Apcu
     /**
      * Store data in memory
      *
-     * @param string  $key Key
-     * @param mixed   $var Data
-     * @param integer $ttl TTL seconds
+     * @param string $key Key
+     * @param mixed  $var Data
+     * @param int    $ttl TTL seconds
      *
-     * @return boolean
+     * @return bool
      */
     public function store($key, $var, $ttl = null)
     {
@@ -114,7 +110,7 @@ class Apcu
      *
      * @param string $key
      *
-     * @return boolean
+     * @return bool
      */
     public function delete($key)
     {
@@ -128,7 +124,7 @@ class Apcu
      *
      * @param string $key
      *
-     * @return boolean
+     * @return bool
      */
     public function exists($key)
     {

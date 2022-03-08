@@ -1,8 +1,9 @@
 <?php
+
 namespace M6Web\Bundle\ApcuBundle\CacheAdapters;
 
-use M6Web\Bundle\GuzzleHttpBundle\Cache\CacheInterface;
 use M6Web\Bundle\ApcuBundle\Apcu\Apcu as BaseApcu;
+use M6Web\Bundle\GuzzleHttpBundle\Cache\CacheInterface;
 
 /**
  * Cache interface for the m6web guzzlehttp bundle
@@ -50,7 +51,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
      */
     public function ttl($key)
     {
-        $key   = $this->getFinalKey($key);
+        $key = $this->getFinalKey($key);
         $infos = apcu_cache_info();
 
         foreach ($infos['cache_list'] as $entry) {
