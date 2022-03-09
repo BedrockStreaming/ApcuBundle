@@ -1,4 +1,4 @@
-# Bundle APCu [![Build Status](https://travis-ci.org/M6Web/ApcuBundle.svg?branch=master)](https://travis-ci.org/M6Web/ApcuBundle)
+# Bundle APCu [![Build Status](https://github.com/BedrockStreaming/apcuBundle/actions/workflows/ci.yml/badge.svg)](https://github.com/BedrockStreaming/apcuBundle/actions/workflows/ci.yml) [![Total Downloads](https://poser.pugx.org/m6web/apcu-bundle/downloads.svg)](https://packagist.org/packages/m6web/apcu-bundle) [![License](http://poser.pugx.org/m6web/apcu-bundle/license)](https://packagist.org/packages/m6web/apcu-bundle) [![PHP Version Require](http://poser.pugx.org/m6web/apcu-bundle/require/php)](https://packagist.org/packages/m6web/apcu-bundle)
 
 Provide APCu support, see [PECL/APCu](http://pecl.php.net/package/APCu).
 
