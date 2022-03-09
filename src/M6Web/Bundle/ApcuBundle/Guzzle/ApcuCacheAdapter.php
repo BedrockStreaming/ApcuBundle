@@ -7,20 +7,16 @@ use M6Web\Bundle\ApcuBundle\Apcu\Apcu;
 
 /**
  * Apcu cache adapter
- *
  */
 class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
 {
-    /**
-     * @var Apcu
-     */
+    /** @var Apcu */
     protected $cache;
 
     /**
      * ApcuCacheAdapter
      *
-     * @param Apcu     $cache
-     * @param null|int $ttl
+     * @param int|null $ttl
      */
     public function __construct(Apcu $cache, $ttl = null)
     {
