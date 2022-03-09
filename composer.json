@@ -3,11 +3,11 @@
     "type": "symfony-bundle",
     "description" : "Provide APCu support",
     "require": {
-        "php"                            : ">=7.2",
+        "php"                            : ">=7.4",
         "ext-apcu"                       : ">=4.0.7, <5.3"
     },
     "require-dev": {
-        "atoum/atoum"                    : "^3.4||^4.0",
+        "atoum/atoum"                    : "^4.0",
         "m6web/php-cs-fixer-config"      : "^2.0"
     },
     "autoload": {
