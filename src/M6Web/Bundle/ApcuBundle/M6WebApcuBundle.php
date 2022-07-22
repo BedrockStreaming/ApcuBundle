@@ -14,7 +14,7 @@ class M6WebApcuBundle extends Bundle
      *
      * @return object DependencyInjection\M6WebApcuExtension
      */
-    public function getContainerExtension()
+    public function getContainerExtension(): ?ExtensionInterface
     {
         return new DependencyInjection\M6WebApcuExtension();
     }
