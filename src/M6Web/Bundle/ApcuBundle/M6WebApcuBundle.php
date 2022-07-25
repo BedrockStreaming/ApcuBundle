@@ -2,6 +2,7 @@
 
 namespace M6Web\Bundle\ApcuBundle;
 
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
