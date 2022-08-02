@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace M6Web\Bundle\ApcuBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -13,7 +15,7 @@ class M6WebApcuExtension extends Extension
     /**
      * {@inheritDoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
@@ -31,8 +33,6 @@ class M6WebApcuExtension extends Extension
 
     /**
      * Get bundle alias
-     *
-     * @return string
      */
     public function getAlias(): string
     {

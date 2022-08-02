@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace M6Web\Bundle\ApcuBundle\Guzzle;
 
 use Guzzle\Cache;
@@ -10,15 +12,15 @@ use M6Web\Bundle\ApcuBundle\Apcu\Apcu;
  */
 class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
 {
-    /** @var Apcu */
+    /**
+     * @var Apcu
+     */
     protected $cache;
 
     /**
      * ApcuCacheAdapter
-     *
-     * @param int|null $ttl
      */
-    public function __construct(Apcu $cache, $ttl = null)
+    public function __construct(Apcu $cache, ?int $ttl = null)
     {
         $this->cache = $cache;
 
@@ -30,7 +32,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function contains($id, array $options = null)
+    public function contains(string $id, ?array $options = null): bool
     {
         return $this->cache->exists($id);
     }
@@ -38,7 +40,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function delete($id, array $options = null)
+    public function delete(string $id, ?array $options = null): bool
     {
         return $this->cache->delete($id);
     }
@@ -46,7 +48,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function fetch($id, array $options = null)
+    public function fetch(string $id, ?array $options = null):bool
     {
         return $this->cache->fetch($id);
     }

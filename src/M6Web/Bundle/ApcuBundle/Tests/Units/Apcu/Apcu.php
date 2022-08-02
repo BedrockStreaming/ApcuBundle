@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace M6Web\Bundle\ApcuBundle\Tests\Units\Apcu;
 
 use M6Web\Bundle\ApcuBundle\Apcu\Apcu as Base;
