@@ -4,10 +4,7 @@
     "description" : "Provide APCu support",
     "require": {
         "php"                            : ">=7.4",
-        "ext-apcu"                       : ">=4.0.7, <5.3",
-        "guzzlehttp/guzzle": "^5.0",
-        "guzzle/cache": "^3.0",
-        "symfony/symfony": "^4.4 || ^5.4 || ^6.0"
+        "ext-apcu"                       : ">=4.0.7, <5.3"
     },
     "require-dev": {
         "atoum/atoum"                    : "^4.0",
