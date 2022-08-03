@@ -12,9 +12,7 @@ use M6Web\Bundle\ApcuBundle\Apcu\Apcu;
  */
 class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
 {
-    /**
-     * @var Apcu
-     */
+    /** @var Apcu */
     protected $cache;
 
     /**
@@ -32,7 +30,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function contains(string $id, ?array $options = null): bool
+    public function contains($id, ?array $options = null): bool
     {
         return $this->cache->exists($id);
     }
@@ -40,7 +38,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function delete(string $id, ?array $options = null): bool
+    public function delete($id, ?array $options = null): bool
     {
         return $this->cache->delete($id);
     }
@@ -48,7 +46,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function fetch(string $id, ?array $options = null):bool
+    public function fetch($id, ?array $options = null)
     {
         return $this->cache->fetch($id);
     }
@@ -56,7 +54,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function save($id, $data, $lifeTime = null, array $options = null)
+    public function save($id, $data, $lifeTime = null, array $options = null): bool
     {
         return $this->cache->store($id, $data, $lifeTime);
     }

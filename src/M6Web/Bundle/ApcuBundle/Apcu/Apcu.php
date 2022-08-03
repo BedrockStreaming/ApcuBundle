@@ -22,7 +22,8 @@ class Apcu
      */
     public function __construct(string $namespace = '', int $ttl = 3600)
     {
-        $this->setNamespace($namespace);
+        $this->namespace = $namespace;
+        $this->ttl = $ttl;
     }
 
     /**

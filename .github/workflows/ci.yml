@@ -26,5 +26,5 @@ jobs:
         run: composer update --prefer-dist --no-interaction
       - name: Unit tests
         run: |-
-          vendor/bin/atoum
+          vendor/bin/phpunit tests
           vendor/bin/php-cs-fixer fix --dry-run --using-cache=no --verbose

@@ -4,14 +4,19 @@
     "description" : "Provide APCu support",
     "require": {
         "php"                            : ">=7.4",
-        "ext-apcu"                       : ">=4.0.7, <5.3"
+        "ext-apcu"                       : ">=4.0.7"
     },
     "require-dev": {
-        "atoum/atoum"                    : "^4.0",
-        "m6web/php-cs-fixer-config"      : "^2.0"
+        "phpunit/phpunit"                : "^9.5",
+        "m6web/php-cs-fixer-config"      : "^2.0",
+        "m6web/guzzle-http-bundle"       : "^4.0 || ^5.0",
+        "guzzle/cache"                   : "^3.9.2"
     },
     "autoload": {
         "psr-0": { "": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "M6Web\\ApcuBundle\\Tests\\":  "tests" }
     },
     "minimum-stability" : "dev"
 }
