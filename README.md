@@ -66,5 +66,5 @@ If you wish to run Bundle tests, you must enable APCu in CLI environment by defi
 Then you can run the tests :
 
 ```shell
-$ ./vendor/bin/atoum
+$ ./vendor/bin/phpunit tests
 ```
