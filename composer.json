@@ -4,7 +4,7 @@
     "type": "symfony-bundle",
     "description" : "Provide APCu support",
     "require": {
-        "php"                            : ">=7.4",
+        "php"                            : "^8.0",
         "ext-apcu"                       : ">=4.0.7"
     },
     "require-dev": {
