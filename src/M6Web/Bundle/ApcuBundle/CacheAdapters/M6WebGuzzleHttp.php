@@ -15,7 +15,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
     /**
      * {@inheritDoc}
      */
-    public function has($key)
+    public function has($key): bool
     {
         return $this->exists($key);
     }
@@ -23,7 +23,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
     /**
      * {@inheritDoc}
      */
-    public function get($key)
+    public function get($key): mixed
     {
         if (($value = $this->fetch($key)) === false) {
             return null;
@@ -35,7 +35,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
     /**
      * {@inheritDoc}
      */
-    public function set($key, $value, $ttl = null)
+    public function set($key, $value, $ttl = null): bool
     {
         return $this->store($key, $value, $ttl);
     }
@@ -43,7 +43,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
     /**
      * {@inheritDoc}
      */
-    public function remove($key)
+    public function remove($key): bool|array
     {
         return $this->delete($key);
     }
@@ -51,7 +51,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
     /**
      * {@inheritDoc}
      */
-    public function ttl($key)
+    public function ttl($key): int|false
     {
         $key = $this->getFinalKey($key);
         $infos = apcu_cache_info();

@@ -14,8 +14,6 @@ class M6WebApcuBundle extends Bundle
 {
     /**
      * Allow bypassing the Bundle::getContainerExtension check on getAlias
-     *
-     * @return object DependencyInjection\M6WebApcuExtension
      */
     public function getContainerExtension(): ?ExtensionInterface
     {

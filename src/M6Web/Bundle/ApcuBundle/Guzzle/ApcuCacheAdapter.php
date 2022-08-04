@@ -17,10 +17,8 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
 
     /**
      * ApcuCacheAdapter
-     *
-     * @param int|null $ttl
      */
-    public function __construct(Apcu $cache, $ttl = null)
+    public function __construct(Apcu $cache, ?int $ttl = null)
     {
         $this->cache = $cache;
 
@@ -32,7 +30,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function contains($id, array $options = null)
+    public function contains($id, ?array $options = null): bool
     {
         return $this->cache->exists($id);
     }
@@ -40,7 +38,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function delete($id, array $options = null)
+    public function delete($id, ?array $options = null): bool
     {
         return $this->cache->delete($id);
     }
@@ -48,7 +46,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function fetch($id, array $options = null)
+    public function fetch($id, ?array $options = null): mixed
     {
         return $this->cache->fetch($id);
     }
@@ -56,7 +54,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function save($id, $data, $lifeTime = null, array $options = null)
+    public function save($id, $data, $lifeTime = null, array $options = null): bool
     {
         return $this->cache->store($id, $data, $lifeTime);
     }
