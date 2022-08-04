@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace M6Web\Bundle\ApcuBundle\CacheAdapters;
 
 use M6Web\Bundle\ApcuBundle\Apcu\Apcu as BaseApcu;
@@ -15,7 +13,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
     /**
      * {@inheritDoc}
      */
-    public function has($key): bool
+    public function has($key)
     {
         return $this->exists($key);
     }
@@ -35,7 +33,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
     /**
      * {@inheritDoc}
      */
-    public function set($key, $value, $ttl = null): bool
+    public function set($key, $value, $ttl = null)
     {
         return $this->store($key, $value, $ttl);
     }
@@ -43,7 +41,7 @@ class M6WebGuzzleHttp extends BaseApcu implements CacheInterface
     /**
      * {@inheritDoc}
      */
-    public function remove($key): bool
+    public function remove($key)
     {
         return $this->delete($key);
     }

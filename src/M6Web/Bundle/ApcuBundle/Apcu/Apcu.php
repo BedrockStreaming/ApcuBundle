@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace M6Web\Bundle\ApcuBundle\Apcu;
 
 /**
@@ -10,9 +8,11 @@ namespace M6Web\Bundle\ApcuBundle\Apcu;
  */
 class Apcu
 {
-    protected string $namespace;
+    /** @var string */
+    protected $namespace;
 
-    protected int $ttl;
+    /** @var int ttl */
+    protected $ttl;
 
     /**
      * Construct
@@ -20,7 +20,7 @@ class Apcu
      * @param string $namespace Namespace
      * @param int    $ttl       Default TTL
      */
-    public function __construct(string $namespace = '', int $ttl = 3600)
+    public function __construct($namespace = '', $ttl = 3600)
     {
         $this->namespace = $namespace;
         $this->ttl = $ttl;
@@ -28,8 +28,12 @@ class Apcu
 
     /**
      * Define cache namespace
+     *
+     * @param string $namespace
+     *
+     * @return $this
      */
-    public function setNamespace(string $namespace): self
+    public function setNamespace($namespace)
     {
         $this->namespace = $namespace;
 
@@ -38,16 +42,22 @@ class Apcu
 
     /**
      * Get cache namespace
+     *
+     * @return string
      */
-    public function getNamespace(): string
+    public function getNamespace()
     {
         return $this->namespace;
     }
 
     /**
      * Define default TTL
+     *
+     * @param int $ttl
+     *
+     * @return $this [description]
      */
-    public function setTtl(int $ttl): self
+    public function setTtl($ttl)
     {
         $this->ttl = $ttl;
 
@@ -56,16 +66,24 @@ class Apcu
 
     /**
      * Get default TTL
+     *
+     * @return int
      */
-    public function getTtl(): int
+    public function getTtl()
     {
         return $this->ttl;
     }
 
     /**
      * Store data in memory
+     *
+     * @param string $key Key
+     * @param mixed  $var Data
+     * @param int    $ttl TTL seconds
+     *
+     * @return bool
      */
-    public function store(string $key, $var, ?int $ttl = null): bool
+    public function store($key, $var, $ttl = null)
     {
         return apcu_store(
             $this->getFinalKey($key),
@@ -77,9 +95,11 @@ class Apcu
     /**
      * Retrive data from memory
      *
+     * @param string $key
+     *
      * @return mixed Stored data or false if not found
      */
-    public function fetch(string $key)
+    public function fetch($key)
     {
         return apcu_fetch(
             $this->getFinalKey($key)
@@ -89,7 +109,9 @@ class Apcu
     /**
      * Remove entry from memory
      *
-     * @return bool|string[]
+     * @param string $key
+     *
+     * @return bool
      */
     public function delete($key)
     {
@@ -100,8 +122,12 @@ class Apcu
 
     /**
      * Check if entry exists in memory
+     *
+     * @param string $key
+     *
+     * @return bool
      */
-    public function exists(string $key): bool
+    public function exists($key)
     {
         return apcu_exists(
             $this->getFinalKey($key)
@@ -111,8 +137,12 @@ class Apcu
     /**
      * Generate cache key with namespace
      * if available
+     *
+     * @param string $key
+     *
+     * @return string
      */
-    protected function getFinalKey(string $key): string
+    protected function getFinalKey($key)
     {
         if (!empty($this->namespace)) {
             return sprintf('%s/%s', $this->namespace, $key);

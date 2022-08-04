@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace M6Web\Bundle\ApcuBundle\Guzzle;
 
 use Guzzle\Cache;
@@ -17,8 +15,10 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
 
     /**
      * ApcuCacheAdapter
+     *
+     * @param int|null $ttl
      */
-    public function __construct(Apcu $cache, ?int $ttl = null)
+    public function __construct(Apcu $cache, $ttl = null)
     {
         $this->cache = $cache;
 
@@ -30,7 +30,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function contains($id, ?array $options = null): bool
+    public function contains($id, array $options = null)
     {
         return $this->cache->exists($id);
     }
@@ -38,7 +38,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function delete($id, ?array $options = null): bool
+    public function delete($id, array $options = null)
     {
         return $this->cache->delete($id);
     }
@@ -46,7 +46,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function fetch($id, ?array $options = null)
+    public function fetch($id, array $options = null)
     {
         return $this->cache->fetch($id);
     }
@@ -54,7 +54,7 @@ class ApcuCacheAdapter extends Cache\AbstractCacheAdapter
     /**
      * {@inheritdoc}
      */
-    public function save($id, $data, $lifeTime = null, array $options = null): bool
+    public function save($id, $data, $lifeTime = null, array $options = null)
     {
         return $this->cache->store($id, $data, $lifeTime);
     }
