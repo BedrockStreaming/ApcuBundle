@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace M6Web\Bundle\ApcuBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -15,8 +17,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('m6web_apcu');
+        $treeBuilder = new TreeBuilder('m6web_apcu');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->requiresAtLeastOneElement()

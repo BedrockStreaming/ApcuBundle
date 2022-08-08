@@ -8,7 +8,12 @@ jobs:
     strategy:
       matrix:
         php-version: [ '7.4', '8.0', '8.1' ]
-        symfony-version: ['^4.4', '^5.0']
+        symfony-version: ['^4.4', '5.4']
+        include:
+          - php-version: '8.0'
+            symfony-version: '6.0'
+          - php-version: '8.1'
+            symfony-version: '6.0'
       fail-fast: false
     steps:
       - uses: actions/checkout@master
@@ -26,5 +31,5 @@ jobs:
         run: composer update --prefer-dist --no-interaction
       - name: Unit tests
         run: |-
-          vendor/bin/atoum
+          vendor/bin/phpunit tests
           vendor/bin/php-cs-fixer fix --dry-run --using-cache=no --verbose

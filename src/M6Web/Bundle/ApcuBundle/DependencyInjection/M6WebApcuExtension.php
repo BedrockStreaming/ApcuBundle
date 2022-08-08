@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace M6Web\Bundle\ApcuBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -31,10 +33,8 @@ class M6WebApcuExtension extends Extension
 
     /**
      * Get bundle alias
-     *
-     * @return string
      */
-    public function getAlias()
+    public function getAlias(): string
     {
         return 'm6web_apcu';
     }

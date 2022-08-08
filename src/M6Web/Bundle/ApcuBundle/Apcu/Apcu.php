@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace M6Web\Bundle\ApcuBundle\Apcu;
 
 /**
@@ -11,7 +13,7 @@ class Apcu
     /** @var string */
     protected $namespace;
 
-    /** @var ttl */
+    /** @var int ttl */
     protected $ttl;
 
     /**
@@ -22,7 +24,8 @@ class Apcu
      */
     public function __construct($namespace = '', $ttl = 3600)
     {
-        $this->setNamespace($namespace);
+        $this->namespace = $namespace;
+        $this->ttl = $ttl;
     }
 
     /**

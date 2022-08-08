@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace M6Web\Bundle\ApcuBundle;
 
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
@@ -14,7 +17,7 @@ class M6WebApcuBundle extends Bundle
      *
      * @return object DependencyInjection\M6WebApcuExtension
      */
-    public function getContainerExtension()
+    public function getContainerExtension(): ?ExtensionInterface
     {
         return new DependencyInjection\M6WebApcuExtension();
     }
